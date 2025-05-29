@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8080/api',  // Spring Boot backend
+  baseURL: 'http://localhost:8081/api',  // Spring Boot backend
   withCredentials: true,  // Enable cookies/JWT tokens
   headers: {
     'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import React from "react"
 import { login } from '../api/auth'
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { token } = await login({ email, password });
+      const { token } = await login({ username, password });
       localStorage.setItem('token', token);
       navigate('/dashboard');
     } catch (err) {
@@ -27,11 +27,11 @@ export default function LoginPage() {
       {error && <Alert variant="danger">{error}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Username</Form.Label>
           <Form.Control
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </Form.Group>

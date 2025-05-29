@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // Base URL for auth-related endpoints
-const API_URL = 'http://localhost:8080/api/auth'
+const API_URL = 'http://localhost:8081/api/auth'
 
 // Create an Axios instance for API requests
 const apiClient = axios.create({

@@ -21,7 +21,7 @@ export default function RegisterPage() {
     }
 
     try {
-      await axios.post('http://localhost:8080/api/auth/register', formData)
+      await axios.post('http://localhost:8081/api/auth/register', formData)
       navigate('/auth/login?registered=true')
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed')
